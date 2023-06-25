@@ -105,6 +105,49 @@ echo '<br><br>';
 // echo (true ? 'true' : false ? 't' : 'f'); deprecated
 
 echo ((true ? 'true' : false) ? 't' : 'f');
+echo '<br><br>';
+
+//$word = 'hello';
+$sentinel = !empty($word) ? 'not empty' : 'empty';
+if ($sentinel == 'empty') {
+    echo 'word is empty';
+} else {
+    echo "word is not empty, it contain: {$word}";
+}
+echo '<br><br>';
+
+// null coalescing operator
+$check_null = null;
+$first_check = $check_null ?? 'it was null';
+echo $first_check;
+
+// loose comparison
+echo '<br><br>';
+$a = 10;       // integer
+$b = "10";     // string
+
+if ($a == $b) {
+    echo "Equal";
+} else {
+    echo "Not equal";
+}
+
+// switch case
+$fav_color = 'yellow';
+
+switch($fav_color) {
+    case 'red':
+        echo 'Your fav is red';
+        break;
+    case 'blue':
+        echo 'Your fav is blue';
+        break;
+    default:
+        echo 'we dont know your fav color';
+}
+
+
+
 
 
 
