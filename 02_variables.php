@@ -19,8 +19,13 @@ echo "Hello, my name is {$name}";
 
 echo '<br>';
 echo 5 + 5 . '<br>';
-echo '5' + '6'; // ? check it later!
+echo '5' + '6'; // ? check it later! - correct, weak typing
+$var = '5.5' + '6';
+echo $var;
+echo gettype($var);
 
+
+// named constant https://www.php.net/manual/en/function.define.php
 define('HOST', 'localhost');
 echo HOST;
 
