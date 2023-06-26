@@ -107,6 +107,7 @@ echo '<br>';
 $basic_array[] = 5;
 $basic_array[] = 5;
 
+// array_push, array_pop, array_shift, array_unshift, array[] = value
 print_r($basic_array);
 echo '<br>';
 echo '<br>';
