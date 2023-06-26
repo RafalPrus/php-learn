@@ -27,3 +27,13 @@ while ($c <= 5) {
     $c++;
 }
 
+// do while loop
+$x = 7;
+do {
+    echo 'num: ' . $x . '<br>';
+    $x++;
+} while ($x <= 5); // first iteration guaranteed
+
+
+
+
