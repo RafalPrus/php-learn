@@ -67,4 +67,30 @@ foreach ($arr_2 as $fruit) {
 foreach ($arr_2 as $num => $fruit) {
     echo 'num: ' . $num . ' ' . $fruit . '<br>';
 }
+echo '<ul>';
+foreach ($arr_2 as $num => $fruit) {
+    switch ($num) {
+        case 2:
+            echo '<li>' . 'This is banana!' . '<br>';
+            break; // have to set break
+        default:
+            echo '<li>' . 'Number: ' . $num . ' name: ' . $fruit . '<br>';
+    }
+}
+echo '</ul>';
+echo '<ul>';
+foreach ($arr_2 as $num => $fruit) {
+    switch ($num) {
+        case 2:
+            $arr_2[$num] = 'case 2';
+            echo '<li>' . "This is: {$fruit}" . '<br>';
+            echo '<li>' . "This is updated value: {$arr_2[$num]}" . '<br>';
+            break;
+        default:
+            echo '<li>' . 'Number: ' . $num . ' name: ' . $fruit . '<br>';
+    }
+}
 
+print_r($arr_2);
+
+// reference - https://www.php.net/manual/en/language.references.whatdo.php

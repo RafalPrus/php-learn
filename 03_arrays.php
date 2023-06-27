@@ -136,9 +136,108 @@ echo '<br>';
 array_unshift($empty_arr, array_shift($basic_array));
 print_r($empty_arr);
 
+// array_merge
+echo '<br>';
+echo '<br>';
+echo 'basic: <br>';
+print_r($basic_array);
+echo '<br>';
+echo 'basic_2: <br>';
+print_r($basic_array_2);
+echo '<br>';
+$merged_array = array_merge($basic_array, $basic_array_2);
+print_r($merged_array);
+echo '<br>';
+$fruits = ['apple', 'banana', 'orange'];
+$orange_fruits = ['orange', 'grapefruit'];
+$merged_fruits = array_merge($fruits, $orange_fruits);
+print_r($merged_fruits);
+echo '<br>';
 
+// array merge associative arrays
+$fruits_2 = [
+    'apple' => 'green',
+    'lemon' => 'yellow',
+    'grape' => 'violet'
+];
+$fruits_3 = [
+    'orange' => 'orange',
+    'apple' => 'red',
+    'coconut' => 'brown'
+];
+$merged_fruits_colors = array_merge($fruits_2, $fruits_3);
+print_r($merged_fruits_colors);
+echo '<br>';
 
+// array_slice
+// echo $cars[-1]; not allowed
+$cars = ['bmw', 'opel', 'vw', 'audi'];
+$s_cars = array_slice($cars, 1);
+print_r($s_cars);
+echo '<br>';
+$s_cars_rev = array_slice($cars, -2);
+print_r($s_cars_rev);
+echo '<br>';
+// with length
+$cars_02 = ['bmw', 'opel', 'vw', 'audi'];
+$sliced = array_slice($cars_02, -3, 2);
+print_r($sliced);
 
+// array_splice
+$simple_arr = [1, 2, 3, 4, 5];
+array_splice($simple_arr, -3, replacement: ['x', 'y']);
+$splice = array_splice($simple_arr, -3, replacement: ['x', 'y']);
+echo '<br>';
+print_r($splice);
+echo '<br>';
+print_r($simple_arr);
+echo '<br>';
 
+// count
+$name = 'Harry';
+// echo count($name); string is not countable, new class have to implement Countable interface to be countable
+$basic_arr = ['one', 2, 3, 'green', 'category'=> 'movie'];
+echo count($basic_arr);
+echo '<br>';
+
+// in_array
+$players = ['Harry', 'Henry', 'Tom'];
+$players_details = [
+    'Carol' => 'lvl 9',
+    'Susan' => 'lvl 12'
+];
+$players['group'] = $players_details;
+switch (in_array('Harry', $players)) {
+    case true:
+        echo 'Harry is in array' . '<br>';
+        break;
+    default:
+        echo 'Harry is not in array' . '<br>';
+}
+
+switch (in_array('Carol', $players_details)) {
+    case true:
+        echo 'Carol is in array' . '<br>';
+        break;
+    default:
+        echo 'Carol is not in array' . '<br>';
+}
+
+/* IMPORTANT not working, learn later how to check if key => value pair exists in associative array
+ * switch (in_array(('Carol' => 'lvl 9'), $players_details)) {
+    case true:
+        echo 'Carol is in array' . '<br>';
+        break;
+    default:
+        echo 'Carol is not in array' . '<br>';
+}*/
+
+switch (in_array($players_details, $players)) {
+    case true:
+        echo 'players_details arr in players' . '<br>';
+        break;
+    default:
+        echo 'players_details arr not in players' . '<br>';
+}
 
 
