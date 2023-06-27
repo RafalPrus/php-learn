@@ -90,7 +90,66 @@ foreach ($arr_2 as $num => $fruit) {
             echo '<li>' . 'Number: ' . $num . ' name: ' . $fruit . '<br>';
     }
 }
-
+echo '</ul>';
 print_r($arr_2);
 
 // reference - https://www.php.net/manual/en/language.references.whatdo.php
+
+
+$a =& $g;
+echo gettype($a);
+
+echo '<br>';
+$arr_loop = ['cat', 'dog', 'wolf', 'tiger'];
+echo '<p>first loop: </p><br>';
+foreach ($arr_loop as $animal) {
+    echo $animal . '<br>';
+    $animal = $animal . '+ loop'; // this isn't working, need reference sign
+}
+echo '<p>second loop: </p><br>';
+foreach ($arr_loop as $animal) {
+    echo 'after first loop: ' . $animal . '<br>';
+}
+echo '<p>third loop: </p><br>';
+foreach ($arr_loop as &$animal) {
+    echo $animal . '<br>';
+    $animal = $animal . '+ loop'; // this is working, reference used (&)
+}
+echo '<p>fourth loop: </p><br>';
+foreach ($arr_loop as $animal) {
+    echo 'after first loop: ' . $animal . '<br>';
+}
+
+$accociative_arr_loop = [
+    'first' => 'John',
+    'second' => 'Susan',
+    'third' => 'Mark',
+    'fourth' => 'Caroline'
+];
+
+foreach ($accociative_arr_loop as $position => $name) {
+    echo 'Your position is: ' . $position . ' and name is: ' . $name . '<br>';
+}
+
+$counter = 0;
+/* won't work, can't use referenece in key
+foreach ($accociative_arr_loop as &$position => $name) {
+    echo 'Your position is: ' . $position . ' and name is: ' . $name . '<br>';
+    $counter++;
+    $position = $counter; 
+}*/
+echo '<b> NEXT</b><br>';
+foreach ($accociative_arr_loop as $position => &$name) {
+    echo 'Your position is: ' . $position . ' and name is: ' . $name . '<br>';
+    echo 'frist counter: ' . $counter . '<br>';
+    $counter++;
+    echo 'second counter: ' . $counter . '<br>';
+    $name = $counter;
+    echo 'third counter: ' . $counter . '<br>';
+}
+echo '**************<br>';
+print_r($accociative_arr_loop);
+
+foreach ($accociative_arr_loop as $pos => $name_) {
+    echo 'Your position is: ' . $pos . ' and name is: ' . $name_ . '<br>';
+} // warning: using same values names in many foreach loops can make some strange output!
