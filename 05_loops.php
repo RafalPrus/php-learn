@@ -153,3 +153,40 @@ print_r($accociative_arr_loop);
 foreach ($accociative_arr_loop as $pos => $name_) {
     echo 'Your position is: ' . $pos . ' and name is: ' . $name_ . '<br>';
 } // warning: using same values names in many foreach loops can make some strange output!
+
+$users = [
+    123 => 'Joe',
+    124 => 'Laura',
+    125 => 'Dennis',
+    126 => 'Karen'
+];
+do {
+    array_splice($users, 0, 1, );
+} while (count($users) > 2);
+
+foreach ($users as $id => $user_name) {
+    echo $id . ': ' . $user_name . '<br>';
+}
+
+$users_2 = ['Joe', 'Laura', 'Dennis', 'Karen'];
+echo 'for loop example: <br>';
+for ($i=0; $i < count($users_2); $i++) {
+    echo $users_2[$i] . '<br>';
+}
+echo '<br><br>';
+// for vs foreach vs while
+$students = ['Joe', 'Laura', 'Dennis', 'Karen'];
+for ($i=0; $i < count($students); $i++) {
+    echo 'nr: ' . $i . ' Name: ' . $students[$i] . '<br>';
+}
+echo '<br><br>';
+foreach ($students as $index => $student_name) {
+    echo 'nr: ' . $index . ' Name: ' . $student_name . '<br>';
+}
+echo '<br><br>';
+$counter = 0;
+$loops = count($students);
+while ($counter < $loops) {
+    echo 'nr: ' . $counter . ' Name: ' . $students[$counter] . '<br>';
+    $counter++;
+}
