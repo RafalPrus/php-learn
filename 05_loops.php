@@ -174,6 +174,7 @@ for ($i=0; $i < count($users_2); $i++) {
     echo $users_2[$i] . '<br>';
 }
 echo '<br><br>';
+
 // for vs foreach vs while
 $students = ['Joe', 'Laura', 'Dennis', 'Karen'];
 for ($i=0; $i < count($students); $i++) {
@@ -190,3 +191,10 @@ while ($counter < $loops) {
     echo 'nr: ' . $counter . ' Name: ' . $students[$counter] . '<br>';
     $counter++;
 }
+echo 'while + preincrementation <br>';
+$counter = 0;
+while ($counter < $loops) {
+    echo 'nr: ' . $counter . ' Name: ' . $students[$counter] . '<br>';
+    ++$counter;
+}
+

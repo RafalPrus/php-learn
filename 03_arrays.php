@@ -240,4 +240,17 @@ switch (in_array($players_details, $players)) {
         echo 'players_details arr not in players' . '<br>';
 }
 
+$characters = ['Batman', 'Spiderman', 'Thor', true];
+$characters[] = 'Loki';
+$character = array_slice($characters, 1, 1);
+print_r($characters);
+print_r($character);
 
+print_r($characters);
+echo '<br>';
+$bool_arr = [true, true, false];
+foreach ($bool_arr as $value) {
+    echo 'var: ' . $value . ' type: ' . gettype($value) . '<br>';
+}
+var_dump($bool_arr);
+print_r($bool_arr);
